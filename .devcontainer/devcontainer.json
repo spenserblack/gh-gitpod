@@ -1,0 +1,15 @@
+{
+    "name": "Go",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": { "VARIANT": "1.19" }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": ["EditorConfig.EditorConfig", "golang.go"]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
+}
