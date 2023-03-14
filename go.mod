@@ -2,7 +2,7 @@ module github.com/spenserblack/gh-gitpod
 
 go 1.19
 
-require github.com/cli/go-gh v1.0.0
+require github.com/cli/go-gh v1.2.1
 
 require (
 	github.com/cli/safeexec v1.0.0 // indirect
@@ -15,8 +15,8 @@ require (
 	github.com/muesli/termenv v0.12.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/thlib/go-timezone-local v0.0.0-20210907160436-ef149e42d28e // indirect
-	golang.org/x/net v0.0.0-20220923203811-8be639271d50 // indirect
-	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
-	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/term v0.5.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
