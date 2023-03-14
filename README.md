@@ -1,5 +1,7 @@
 # gh-gitpod
 
+[![CI](https://github.com/spenserblack/gh-gitpod/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/gh-gitpod/actions/workflows/ci.yml)
+
 An (unofficial) extension to open your repository in gitpod.io
 
 ## Usage
