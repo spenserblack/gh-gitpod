@@ -2,25 +2,28 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/cli/go-gh"
+	"github.com/cli/go-gh/pkg/browser"
 )
 
 func main() {
-	fmt.Println("hi world, this is the gh-gitpod extension!")
-	client, err := gh.RESTClient(nil)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	response := struct {Login string}{}
-	err = client.Get("user", &response)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Printf("running as %s\n", response.Login)
+	repo, err := gh.CurrentRepository()
+	onError(err)
+
+	fullRepo := fmt.Sprintf("%s/%s/%s", repo.Host(), repo.Owner(), repo.Name())
+
+	fmt.Println(fullRepo)
+
+	b := browser.New("", os.Stdout, os.Stderr)
+
+	err = b.Browse(fmt.Sprintf("https://gitpod.io/#%s", fullRepo))
 }
 
-// For more examples of using go-gh, see:
-// https://github.com/cli/go-gh/blob/trunk/example_gh_test.go
+func onError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %s\n", err)
+		os.Exit(1)
+	}
+}
